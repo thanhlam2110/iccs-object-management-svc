@@ -1,0 +1,1331 @@
+{
+	"info": {
+		"_postman_id": "67b6f27e-74d3-4145-a3ff-29879820ba49",
+		"name": "SSO API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "ADD USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\":\"thanhlam\",\n\"password\":\"123456\",\n\"lastname\":\"thanhlam\",\n\"useremail\":\"thanhlam@vnpt.vn\",\n\"usertel\":\"0907888511\",\n\"userdate\":\"2020-06-22\",\n\"userstatus\":\"ACTIVE\",\n\"userparentid\":\"VNPT\",\n\"comid\":\"VNPT\",\n\"comdepartment\":\"\",\n\"usercode\":\"\",\n\"usertype\":\"ADMIN_ENDUSER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE END USER",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\":\"thanhlam\",\n\"password\":\"123456\",\n\"lastname\":\"thanhlam\",\n\"useremail\":\"nguyentranthanhlam@vnpt.vn\",\n\"usertel\":\"0907999511\",\n\"userdate\":\"2020-06-22\",\n\"userstatus\":\"ACTIVE\",\n\"userparentid\":\"VNPT\",\n\"comid\":\"VNPT\",\n\"comdepartment\":\"\",\n\"usercode\":\"\",\n\"usertype\":\"ADMIN_ENDUSER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/updatenduser",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"updatenduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY USER",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"GV_BMVT\",\n\t\"password\":\"12356789\",\n\t\"lastname\":\"GV_BMVT\",\n\t\"useremail\":\"GV_BMVT@edu.com.vn\",\n\t\"usertel\":\"0907111019\",\n\t\"userdate\":\"2020-06-12\",\n\t\"userstatus\":\"DISABLE\",\n\t\"userparentid\":\"BOMON_VIENTHONG\",\n\t\"comid\":\"DHBK\",\n\t\"comdepartment\":\"BOMON_VIENTHONG\",\n\t\"usercode\":\"DHBK_9999\",\n\t\"usertype\":\"USER_COM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/updatecompanyuser",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"updatecompanyuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ENDUSER (NON-COMPANY USER)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/deletenduser/thanhlam",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"deletenduser",
+								"thanhlam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/info/DHBK",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"info",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CHECK IF CHILD",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loginusername\":\"DHBK\",\r\n    \"checkusername\":\"BOMON_VIENTHONG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/checkparenthavechild",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"checkparenthavechild"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND CHILD USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/childinfo/GV_BMVT",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"childinfo",
+								"GV_BMVT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND ALL USER BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/infobycomid/DHBK",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"infobycomid",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY USER RELATIONSHIP",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/deleteUserRelationship/GV_BMVT",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"deleteUserRelationship",
+								"GV_BMVT"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_info",
+			"item": [
+				{
+					"name": "ADD COMPANY INFO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comid\":\"DHKT\",\n\t\"comshortname\":\"DHKT\",\n\t\"comfullname\":\"Đại học Kinh Tế TP.HCM\",\n\t\"comaddress\":\"Nguyễn Đình Chiểu\",\n\t\"comtel\":\"028123456789\",\n\t\"compersoncontact\":\"Donal Trump\",\n\t\"compersontel\":\"028123456789\",\n\t\"compersonemail\":\"trump@america.com.vn\",\n\t\"comstatus\":\"ACTIVE\",\n\t\"comdate\":\"2020-06-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyinfo/create",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyinfo",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY INFO",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comid\":\"DHKT\",\n\t\"comshortname\":\"DHKT\",\n\t\"comfullname\":\"Đại học Kinh Tế TP.HCM\",\n\t\"comaddress\":\"268 Lý Thường Kiệt Q10\",\n\t\"comtel\":\"0907888511\",\n\t\"compersoncontact\":\"Ronaldo\",\n\t\"compersontel\":\"0907888511\",\n\t\"compersonemail\":\"ronaldo@realmadrid.com.vn\",\n\t\"comstatus\":\"ACTIVE\",\n\t\"comdate\":\"2020-05-26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/companyinfo/update",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyinfo",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY INFO BY COMID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/companyinfo/DHKT",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyinfo",
+								"DHKT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY INFO BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyinfo/DHKT",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyinfo",
+								"DHKT"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_user_role",
+			"item": [
+				{
+					"name": "ADD COMPANY USER ROLE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"TRUONGKHOA_BMVT\",\n\t\"rolecode\":[\"DHBK_ROLE_01\",\"DHBK_ROLE_02\",\"DHBK_ROLE_03\"],\n\t\"datecreate\":\"2020-06-08\",\n\t\"comid\":\"DHBK\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyuserrole/create",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyuserrole",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY USER ROLE BY USERNAME",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"TRUONGKHOA_BMVT\",\n\t\"rolecode\":[\"DHBK_ROLE_01\",\"DHBK_ROLE_02\"],\n\t\"datecreate\":\"2020-06-23\",\n\t\"comid\":\"DHBK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/companyuserrole/update",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyuserrole",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY USER ROLE BY USERNAME",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/companyuserole/TRUONGKHOA_BMVT",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyuserole",
+								"TRUONGKHOA_BMVT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY USER ROLE BY USERNAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyuserrolebyusername/DHBK",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyuserrolebyusername",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY USER ROLE BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyuserrolebycomid/DHBK",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyuserrolebycomid",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_role",
+			"item": [
+				{
+					"name": "ADD COMPANY ROLE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rolecode\":\"DHBK1_ROLE_99\",\n\t\"rolename\":\"ROLE 1\",\n\t\"roledesc\":\"ROLE 1\",\n\t\"rolestatus\":\"ACTIVE\",\n\t\"roledate\":\"2020-06-01\",\n\t\"comid\":\"DHBK1\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyrole/create",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrole",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY ROLE STATUS BY ROLE CODE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rolecode\":\"DHBK1_ROLE_01\",\n\t\"rolename\":\"ROLE 1.11\",\n\t\"roledesc\":\"ROLE 1.00\",\n\t\"rolestatus\":\"DISABLE\",\n\t\"roledate\":\"2020-06-04\",\n\t\"comid\":\"DHBK1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyrolebycode/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyrolebycode",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY ROLE BY ROLE CODE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:1323/api/sso/v1/user/companyrolebycode/DHBK1_ROLE_99",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyrolebycode",
+								"DHBK1_ROLE_99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY ROLE BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyrolebycomid/DHKT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrolebycomid",
+								"DHKT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY ROLE BY ROLECODE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyrolebycode/DHBK_ROLE_01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrolebycode",
+								"DHBK_ROLE_01"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_function",
+			"item": [
+				{
+					"name": "ADD COMPANY FUNCTION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"functioncode\":\"DHBK1_FUNC_1\",\n\t\"functionname\":\"QUYEN 1\",\n\t\"functiondesc\":\"QUYEN 1\",\n\t\"functionstatus\":\"ACTIVE\",\n\t\"functiondate\":\"2020-05-28\",\n\t\"comid\":\"DHBK1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1323/api/sso/v1/companyfunction/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyfunction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE  COMPANY FUNCTION BY FUNCTION CODE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"functioncode\":\"DHBK1_FUNC_1\",\n\t\"functionname\":\"QUYEN 0\",\n\t\"functiondesc\":\"QUYEN 0\",\n\t\"functionstatus\":\"ACTIVE\",\n\t\"functiondate\":\"2020-06-01\",\n\t\"comid\":\"DHBK1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyfunctionbycode/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyfunctionbycode",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY FUNCTION BY FUNCTION CODE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyfunctionbycode/DHBK1_FUNC_1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyfunctionbycode",
+								"DHBK1_FUNC_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY FUNCTION BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyfunctionbycomid/DHKT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyfunctionbycomid",
+								"DHKT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY FUNCTION BY FUNCCODE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyfunctionbycode/DHBK_FUNC_04",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyfunctionbycode",
+								"DHBK_FUNC_04"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_product",
+			"item": [
+				{
+					"name": "ADD COMPANY PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comid\":\"DHBK1\",\n\t\"productid\":\"ORIMX_platform\",\n\t\"contractcode\":\"11111115\",\n\t\"contractdate\":\"22052020\",\n\t\"contractstatus\":\"DISABLE\",\n\t\"datecreate\":\"22052020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1323/api/sso/v1/companyproduct/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyproduct",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY PRODUCT BY CONTRACT CODE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comid\":\"DHBK\",\n\t\"productid\":\"GIS_Platform\",\n\t\"contractcode\":\"DHBK_CONTRACT_1\",\n\t\"contractdate\":\"2020-06-09\",\n\t\"contractstatus\":\"DISABLE\",\n\t\"datecreate\":\"2020-06-09\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyproduct/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyproduct",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY PRODUCT BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/companyproductbycomid/DHBK",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyproductbycomid",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY PRODUCT BY CONTRACTCODE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyproductbycontractcode/DHBK_CONTRACT_2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyproductbycontractcode",
+								"DHBK_CONTRACT_2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY PRODUCT BY CONTRACT CODE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyproductbycontractcode/11111113",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyproductbycontractcode",
+								"11111113"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "company_role_function",
+			"item": [
+				{
+					"name": "ADD COMPANY ROLE FUNCTION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rolecode\":\"DHBK1_ROLE_01\",\n\t\"functioncodelist\":[\"DHBK_FUNC_01\",\"DHBK_FUNC_02\"],\n\t\"productid\":\"mBaaS_Platform\",\n\t\"comid\":\"DHBK1\",\n\t\"contractstatus\":\"ACTIVE\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1323/api/sso/v1/companyrolefunction/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrolefunction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE COMPANY ROLE FUNCTION BY COMID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rolecode\":\"DHBK1_ROLE_01\",\n\t\"functioncodelist\":[\"DHBK_FUNC_01\",\"DHBK_FUNC_02\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyrolefunction/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyrolefunction",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMPANY ROLE FUNCTION BY ROLE CODE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/user/companyrolefunctionrolecode/DHBK1_ROLE_01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"companyrolefunctionrolecode",
+								"DHBK1_ROLE_01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY ROLE FUNCTION BY ROLECODE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyrolefunctionbycode/DHBK_ROLE_03",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrolefunctionbycode",
+								"DHBK_ROLE_03"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND COMPANY ROLE FUNCTION BY COMID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/api/sso/v1/companyrolefunctionbycomid/DHBK",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"companyrolefunctionbycomid",
+								"DHBK"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "product_integrated",
+			"item": [
+				{
+					"name": "UPDATE PRODUCT INTEGRATED",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"productid\":\"SSO_platform\",\n\"productname\":\"SSO\",\n\"productdesc\":\"Single Sign On System\",\n\"productdate\":\"2020-06-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/productintegrated/update",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"productintegrated",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD PRODUCT INTEGRATED",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"productid\":\"SSO_platform\",\n\"productname\":\"SSO\",\n\"productdesc\":\"Single Sign On system\",\n\"productdate\":\"2020-05-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/productintegrated/create",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"productintegrated",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUCT INTEGRATED",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/productintegrated/SSO_platform",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"productintegrated",
+								"SSO_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND PRODUCT INTEGRATED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/productintegrated/ORIMX_platform",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"productintegrated",
+								"ORIMX_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "auth_sso",
+			"item": [
+				{
+					"name": "AUTH_USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"DHBK\",\n    \"password\":\"123456\",\n    \"productid\":\"mBaaS_Platform\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://221.132.29.81:13233/api/sso/v1/user/auth",
+							"protocol": "http",
+							"host": [
+								"221",
+								"132",
+								"29",
+								"81"
+							],
+							"port": "13233",
+							"path": [
+								"api",
+								"sso",
+								"v1",
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

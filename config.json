@@ -1,0 +1,41 @@
+{
+    "mongo": {
+      "link": "mongodb://admin:Vnpt%40123@mongodb-1:27017,mongodb-2:27017,mongodb-3:27017/?replicaSet=datlichkham&authSource=admin",
+      "linkcu": "mongodb://casuser:Mellon@203.162.141.22:27017/cas?authSource=cas",
+      "url": "mongodb://casuser:Mellon@203.162.141.22:27017/cas?authSource=cas"
+    },
+    "sso": {
+      "url2": "https://casoverlay.vdc2.com.vn:8443/cas/oauth2.0",
+      "url": "https://cas62dev.vdc2.com.vn:38444/cas/oauth2.0"
+    },
+    "elk": {
+      "url": "http://222.255.102.199:9200",
+      "index":"ssov1"
+    },
+    "iot": {
+      "url": "https://iotnew.vdc2.com.vn/",
+      "urltokens": "https://iotnew.vdc2.com.vn/tokens",
+      "urlusers": "https://iotnew.vdc2.com.vn/users"
+    },
+    "redis": {
+      "url": "222.255.102.199:6379"
+    },
+    "oneshop":{
+      "sms": "https://sme-dev.vdc2.com.vn/api/notification/v1/sms/sendSMS",
+      "email":"https://sme-dev.vdc2.com.vn/api/notification/v1/email/send"
+    },
+    "mongocluster": {
+      "link": "mongodb://admin:Vnpt%40123@203.162.141.104:27017,203.162.141.105:27017,203.162.141.112:27017/?replicaSet=datlichkham&authSource=admin"
+    },
+    "kafka":{
+      "url":"mongodb-1:9092,mongodb-2:9092,mongodb-3:9092",
+      "groupID":             "SSOGroup",
+      "autoOffsetReset":    "earliest",
+      "maxPollIntervalms": "300000",
+      "sessionTimeoutms":   "10000",
+      "pool_max_connection": "20"
+    },
+    "servicetemplate":{
+      "oauth2":"OAuthJWTService"
+    }
+}
